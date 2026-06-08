@@ -1,0 +1,3 @@
+point_size: 10
+show_ui: True  # show settings by default
+raw_mode: True  # pretty background makes some colors hard to see

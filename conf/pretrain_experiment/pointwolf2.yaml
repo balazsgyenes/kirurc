@@ -1,0 +1,13 @@
+# @package _global_
+# w/o VariableJitter or RandomPatches, w/ PointWOLF
+
+defaults:
+  - override /dataset/augmentation@synthetic_dataset.augmentation: synthetic_pointwolf
+
+synthetic_dataset:
+  augmentation:
+    cutout: null
+    vary_jitter: False
+
+wandb:
+  name: w/o VariableJitter or RandomPatches, w/ PointWOLF

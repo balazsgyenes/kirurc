@@ -1,0 +1,8 @@
+# @package _global_
+# w/ PointWOLF
+
+defaults:
+  - override /dataset/augmentation@synthetic_dataset.augmentation: synthetic_pointwolf
+
+wandb:
+  name: w/ PointWOLF

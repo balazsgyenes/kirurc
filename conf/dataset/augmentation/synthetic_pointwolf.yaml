@@ -1,0 +1,10 @@
+defaults:
+  - synthetic
+
+pointwolf:
+  num_anchor: 4
+  sample_type: fps
+  sigma: 0.5
+  r_max: 10
+  s_max: 3
+  t_max: 0.25

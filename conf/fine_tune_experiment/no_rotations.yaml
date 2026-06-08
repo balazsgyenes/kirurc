@@ -1,0 +1,9 @@
+# @package _global_
+
+training_data:
+  augmentation:
+    random_rotate_deg: 0
+
+wandb:
+  tags: ["no_rotations"]
+  name: no_rotations

@@ -1,0 +1,11 @@
+cutout:
+  min_cuts: 0
+  max_cuts: 20
+  min_points_per_cut: 0
+  max_points_per_cut: 200
+  classes_to_cut_from: null
+random_rotate_deg: 90
+random_shear: 0.3
+random_stretch: 0.3
+jitter: 0.04
+vary_jitter: True

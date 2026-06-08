@@ -1,0 +1,7 @@
+name: PointNet++
+n_classes: ???
+device: null
+model:
+  _target_: kirurc_vision.models.pointnet_seg.PointNetSeg
+  input_features: 0  # no color
+  num_classes: ${..n_classes}

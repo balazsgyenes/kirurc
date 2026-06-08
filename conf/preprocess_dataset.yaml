@@ -1,0 +1,7 @@
+defaults:
+  - dataset: lap_chole_scene
+  - _self_
+
+dataset:
+  force_reprocess: True
+num_workers: 32

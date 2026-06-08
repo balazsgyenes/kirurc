@@ -1,0 +1,10 @@
+# @package _global_
+
+training_data:
+  augmentation:
+    random_shear: 0
+    random_stretch: 0
+
+wandb:
+  tags: ["no_shear_stretch"]
+  name: no_shear_stretch

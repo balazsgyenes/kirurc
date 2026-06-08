@@ -1,0 +1,36 @@
+defaults:
+  - dataset@test_data: predictions_2023-04-17
+  - metrics: finetune_eval
+  - open3d_draw: default
+  - color_mapping: debugging
+  - _self_
+
+batch_size: 8
+num_workers: 0
+
+test_data:
+  augmentation: null  # disable augmentation to see performance on unnoised data
+  # debug_transforms: True  # enable this to bypass preprocessed data
+
+# start at some index (if integer) or some fraction of the way through dataset (if float)
+# start_at: 0.5
+
+# keep predicted splines/skeletons so they can be saved/rendered
+metrics:
+  spline:
+    cleanup_skeletons: True
+    cleanup_splines: False
+
+# save_pkl:
+#   folder: predictions
+
+# to_pcd:
+#   skip_keys: [t1_skeleton, t2_skeleton]  # do not render reference skeletons
+#   colors_key: predicted_labels
+#   n_spline_points: 100
+
+#   # save_pcd:
+#   #   folder: renderings
+#   #   extension: .ply
+
+#   show: True

@@ -1,0 +1,45 @@
+defaults:
+  - common
+  - augmentation: synthetic
+  - _self_
+
+type: synthetic
+path: ${oc.env:PWD}/datasets/kirurc/lap_chole_scene
+n_classes: 7
+preprocess:
+  to_pointcloud:
+    _target_: kirurc_vision.transforms.ToPointCloud
+    camera_params_file: ???
+    # cleanup_rgbd: False
+  color_to_label:
+    _target_: kirurc_vision.transforms.ColorToLabel
+    color_mapping:
+      0: [16, 16, 16]     # liver/background
+      3: [255, 0, 0]      # gallbladder
+      4: [204, 204, 204]  # fat tissue
+      5: [0, 255, 0]      # cystic duct
+      6: [0, 0, 255]      # cystic artery
+    # cleanup_colors: False
+  downsampling:
+    _target_: torch_geometric.transforms.GridSampling
+    size: 3.0
+  label_targets:
+    _target_: kirurc_vision.transforms.LabelTargets
+    target_label_mapping:
+      Target1: [5, 1]
+      Target2: [6, 2]
+    radius: 30.0
+    # append_true_targets: True
+    # cleanup_targets: False
+  compute_spline:
+    _target_: kirurc_vision.transforms.ComputeReferenceSpline
+    target_classes: ${...target_classes}
+    laplacian_config: ${...laplacian_config}
+    spline_config: ${...spline_config}
+  normalize_scale:
+    _target_: torch_geometric.transforms.NormalizeScale
+
+debug_transforms: False
+force_reprocess: False
+num_workers: ${num_workers}
+take_first_n: null

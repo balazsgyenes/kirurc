@@ -1,0 +1,23 @@
+# background
+0: "#E6B8B8"    # liver/background
+3: "#FF9A66"    # gallbladder
+4: "#E6E4A1"    # fat tissue
+
+# target 1
+5: "#8FB37D"    # cystic duct     [100, 30, 70]
+1: "#87FD4C"    # target 1        [100, 70, 99]
+t1_skeleton: "#3D1466"          # [270, 80, 40]
+t1_spline: "#BC9AFF"            # [260, 40,100]
+t1_pred_skeleton: "#306614"     # [100, 80, 40]
+t1_pred_spline: "#CCFF99"       # [ 90, 40,100]
+
+# target 2
+6: "#7DB3B3"    # cystic artery   [180, 30, 70]
+2: "#4CFDFD"    # target 2        [180, 70, 99]
+t2_skeleton: "#3D1466"          # [270, 80, 40]
+t2_spline: "#BC9AFF"            # [260, 40,100]
+t2_pred_skeleton: "#146666"     # [180, 80, 40]
+t2_pred_spline: "#98FDEC"       # [170, 40, 99]
+
+# misc
+7: "#FF007F"    # regression target

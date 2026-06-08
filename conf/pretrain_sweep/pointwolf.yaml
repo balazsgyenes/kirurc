@@ -1,0 +1,7 @@
+# @package _global_
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      pretrain_experiment: pointwolf1, pointwolf2, pointwolf3, pointwolf4, pointwolf5

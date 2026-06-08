@@ -1,0 +1,47 @@
+defaults:
+  - common
+  - _self_
+
+type: real
+path: ${oc.env:PWD}/datasets/kirurc/experiments_2023-04-17
+n_classes: 3
+preprocess:
+  rough_crop:
+    _target_: kirurc_vision.transforms.Crop
+    center: [-0.19801, -0.093412, 1.3551]
+    extent: [.6, .6, .6]
+  match_target_segments:
+    _target_: kirurc_vision.transforms.MatchTargetSegments
+    # cleanup_targets: False
+  remove_outliers:
+    _target_: kirurc_vision.transforms.RemoveStatisticalOutliers
+    nb_neighbors: 50
+    std_ratio: 3.0
+  segment_plane:
+    _target_: kirurc_vision.transforms.RemovePlane
+    distance_threshold: 0.01
+    ransac_n: 10
+    num_iterations: 1000
+  crop_spanned_rectangle:
+    _target_: kirurc_vision.transforms.CropSpannedRectangle
+    spanning_points:
+      - [-0.370402008, -0.215416687, 1.274299927]
+      - [-0.004597171, -0.226049423, 1.317325073]
+      - [-0.366388824, 0.023156744, 1.427353760]
+      - [-0.057295292, 0.027720861, 1.470593628]
+    z_extent: .2
+  downsampling:
+    _target_: torch_geometric.transforms.GridSampling
+    size: 0.003
+  compute_spline:
+    _target_: kirurc_vision.transforms.ComputeReferenceSpline
+    target_classes: ${...target_classes}
+    laplacian_config: ${...laplacian_config}
+    spline_config: ${...spline_config}
+    cleanup: False  # leave reference skeletons
+  normalize_scale:
+    _target_: kirurc_vision.transforms.NormalizeScale
+
+debug_transforms: False
+force_reprocess: False
+num_workers: ${num_workers}

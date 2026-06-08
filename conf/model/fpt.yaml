@@ -1,0 +1,7 @@
+name: FastPointTransformer
+n_classes: ???
+device: null
+model:
+  _target_: kirurc_vision.models.fast_point_transformer.FastPointTransformer
+  in_channels: 0  # no color
+  out_channels: ${..n_classes}

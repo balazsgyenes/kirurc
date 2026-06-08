@@ -1,0 +1,7 @@
+scenes_base: ${oc.env:PWD}/blender/scenes
+output_base: ${oc.env:PWD}/datasets/kirurc
+blender_file: lap_chole_scene.blend
+python_script: randomize_scene.py
+output_folder: null
+dataset_size: 128000
+num_workers: 32

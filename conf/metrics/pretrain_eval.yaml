@@ -1,0 +1,12 @@
+defaults:
+  - pretrain_train
+  - _self_
+
+# spline:
+#   _target_: kirurc_vision.metrics.SplineChamferDistance
+#   target_classes: ${synthetic_dataset.target_classes}
+#   laplacian_config: ${synthetic_dataset.laplacian_config}
+#   spline_config: ${synthetic_dataset.spline_config}
+#   n_test_points: 100
+#   n_search_points: 100
+#   omit_ends_of_ref: 0.1

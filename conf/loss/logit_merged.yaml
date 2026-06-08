@@ -1,0 +1,5 @@
+name: LogitMergedCE
+args:
+  _target_: kirurc_vision.losses.LogitMergedCrossEntropyLoss
+  classes_to_keep: [1, 2]
+  classes_to_merge: [0, 3, 4, 5, 6]

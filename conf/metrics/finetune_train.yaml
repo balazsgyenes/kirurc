@@ -1,0 +1,5 @@
+miou:
+  _target_: kirurc_vision.metrics.SquashedMIoU
+  num_classes: ${training_data.n_classes}
+  target_classes: ${training_data.target_classes}
+  lowest_class_to_squash: 3

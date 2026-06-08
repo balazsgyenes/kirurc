@@ -1,0 +1,26 @@
+defaults:
+  - dataset: experiments_2023-04-17
+  - open3d_draw: default
+  - color_mapping: debugging
+  - _self_
+
+num_workers: 0
+
+dataset:
+  augmentation:
+    random_rotate_deg: 0
+  # debug_transforms: True
+
+# start at some index (if integer) or some fraction of the way through dataset (if float)
+# start_at: 0.5
+
+to_pcd:
+  skip_keys: [t1_skeleton, t2_skeleton]  # do not render reference skeletons
+  colors_key: "y"
+  n_spline_points: 100
+
+#   save_pcd:
+#     folder: renderings
+#     extension: .ply
+
+  show: True

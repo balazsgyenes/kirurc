@@ -1,0 +1,9 @@
+# @package _global_
+
+trainable_layers:
+  mlp_head: reinit  # ( freeze | train | reinit )
+  n_final_up_layers: 0
+
+wandb:
+  tags: ["head_only_reinit"]
+  name: head_only_reinit

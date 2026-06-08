@@ -1,0 +1,15 @@
+# @package _global_
+
+# do not load pretrained model
+model_artifact: null
+
+wandb:
+  tags: ["no_pretraining"]
+  name: no_pretraining
+
+model:
+  n_classes: 7  # hard-code 7 classes for direct comparison to merged classes case
+
+# train for longer and reduce testing frequency
+epochs: 100
+test_every_n_epochs: 5

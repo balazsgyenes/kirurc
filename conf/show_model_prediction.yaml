@@ -1,0 +1,39 @@
+defaults:
+  - dataset@test_data: experiments_2023-04-17
+  - metrics: finetune_eval
+  - open3d_draw: default
+  - color_mapping: debugging
+  - _self_
+
+model_artifact: gyenes/fine-tuning/model_pgkbyned  # default
+
+device: null
+batch_size: 8
+num_workers: 32
+
+test_data:
+  augmentation: null  # disable augmentation to see performance on unnoised data
+  # debug_transforms: True  # enable this to bypass preprocessed data
+
+# start at some index (if integer) or some fraction of the way through dataset (if float)
+# start_at: 0.5
+
+# keep predicted splines so they can be saved/rendered
+metrics:
+  spline:
+    cleanup_skeletons: False
+    cleanup_splines: False
+
+# save_pkl:
+#   folder: predictions
+
+to_pcd:
+  skip_keys: [t1_skeleton, t2_skeleton]  # do not render reference skeletons
+  colors_key: predicted_labels
+  n_spline_points: 100
+
+#   save_pcd:
+#     folder: renderings
+#     extension: .ply
+
+  show: True

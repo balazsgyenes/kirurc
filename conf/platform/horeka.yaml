@@ -1,0 +1,29 @@
+# @package _global_
+defaults:
+  - slurm
+  - override /hydra/launcher: submitit_slurm
+  - _self_
+
+synthetic_dataset:
+  path: ${oc.env:TMPDIR}/lap_chole_scene
+
+batch_size: 48
+test_batch_size: 48
+num_workers: 8
+
+hydra:
+  mode: MULTIRUN
+  launcher:
+    timeout_min: 2880
+    gres: gpu:1
+    setup:
+      # NOTE: wandb folder will be deleted after job completion, but by then it will have synced with server
+      - export WANDB_DIR=$TMPDIR/wandb
+      - mkdir -pv $WANDB_DIR
+      - wandb enabled
+
+      # setup preprocessed training data
+      - echo "Unpacking training data onto fast local storage..."
+      - mkdir -pv $TMPDIR/lap_chole_scene
+      - tar -xzf ~/data/kirurc/lap_chole_scene_processed.tar.gz -C $TMPDIR/lap_chole_scene
+      - echo "Done."

@@ -1,0 +1,36 @@
+# Python cache files
+*.pyc
+*.egg-info
+
+## WandB log and artifacts folders
+/wandb
+/artifacts
+
+# saved model checkpoints
+/models
+/fine_tuned_models
+
+# hydra output
+/outputs
+/multirun
+
+# predicted point clouds and renderings
+/predictions
+/renderings
+
+# aggregate evaluation results from trained models
+/results
+/pretrained_results
+
+# cluster log files
+/logs
+
+# Blender temp files
+*.blend1
+
+# open3d viewer outputs
+*.json
+*.png
+
+# misc
+*.exr

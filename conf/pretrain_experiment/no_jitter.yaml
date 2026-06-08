@@ -1,0 +1,8 @@
+# @package _global_
+
+synthetic_dataset:
+  augmentation:
+    jitter: 0
+
+wandb:
+  name: no_jitter

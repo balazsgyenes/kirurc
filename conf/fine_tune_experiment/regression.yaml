@@ -1,0 +1,50 @@
+# @package _global_
+
+defaults:
+  - override /loss: target_chamfer_distance
+
+model_artifact: pretrained_7vp6pjhd 
+
+training_data:
+  path: ${oc.env:PWD}/datasets/kirurc/real_2023-04-12_regression
+  preprocess:
+    # as a final step of preprocessing, move targets to pos field so that data augmentation applies to them
+    add_target_points:
+      _target_: kirurc_vision.transforms.AddTargetPoints
+      spline_coordinates:
+        t1_spline: [0.35, 0.5, 0.65]
+        t2_spline: [0.35, 0.5, 0.65]
+  augmentation:
+    # after data augmentation, move targets to y field, as only this is available to loss function
+    move_targets_to_y: True
+test_data:
+  path: ${oc.env:PWD}/datasets/kirurc/experiments_2023-04-17_regression
+  preprocess:
+    # create targets from spline and immediately set them as y, since there
+    # is no augmentation for the test data
+    add_target_points:
+      _target_: kirurc_vision.transforms.AddTargetPoints
+      spline_coordinates:
+        t1_spline: [0.35, 0.5, 0.65]
+        t2_spline: [0.35, 0.5, 0.65]
+      move_targets_to_y: True  # no augmentation, so do this immediately
+
+# tune entire network, since there are no upsample layers
+trainable_layers: null
+
+epochs: 100  # train for longer 
+
+# deactivate existing metrics that don't work with regression output
+train_metrics:
+  miou: null
+eval_metrics:
+  miou: null
+  spline: null
+  # add specialized metric for regression case
+  distance:
+    _target_: kirurc_vision.metrics.DistanceFromTarget
+    distance_threshold: 0.001  # 1mm
+
+wandb:
+  tags: ["regression"]
+  name: regression

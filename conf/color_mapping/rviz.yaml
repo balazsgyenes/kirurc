@@ -1,0 +1,7 @@
+0: [16, 16, 16]     # liver/background
+1: [178, 255, 102]  # target 1
+2: [200, 178, 102]  # target 2
+3: [0, 0, 255]      # gallbladder
+4: [204, 204, 204]  # fat tissue
+5: [0, 255, 0]      # cystic duct
+6: [255, 0, 0]      # cystic artery

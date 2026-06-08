@@ -1,0 +1,47 @@
+defaults:
+  - dataset@test_data: lap_chole_scene_test
+  - metrics: pretrain_eval
+  - open3d_draw: default
+  - color_mapping: debugging
+  - _self_
+
+synthetic_dataset:
+  n_classes: 7
+  target_classes: [1, 2]
+
+wandb_entity: kirurc
+wandb_project: kirurc
+tags_all: [final]
+tags_not_in: [regression]
+
+hydra:
+  run:
+    dir: pretrained_results/${now:%Y-%m-%d_%H-%M-%S}
+  output_subdir: hydra
+
+device: null
+batch_size: 32
+num_workers: 8
+
+test_data:
+  # take_first_n: 128
+  augmentation: null  # disable augmentation to see performance on unnoised data
+  # debug_transforms: True  # enable this to bypass preprocessed data
+
+# start at some index (if integer) or some fraction of the way through dataset (if float)
+# start_at: 0.5
+
+save_csv:
+  path: ${hydra:runtime.output_dir}/results.csv
+
+# save_pkl:
+#   folder: predictions
+
+# to_pcd:
+#   skip_keys: [t1_skeleton, t2_skeleton, t1_pred_skeleton, t2_pred_skeleton]  # do not render skeletons
+#   colors_key: predicted_labels
+#   n_spline_points: 100
+
+# #   save_pcd:
+# #     folder: renderings
+# #     extension: .ply

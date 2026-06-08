@@ -1,0 +1,6 @@
+# @package _global_
+
+# by default, fine-tune the entire network
+trainable_layers: null
+
+model_artifact: pretrained_x1wn5bun

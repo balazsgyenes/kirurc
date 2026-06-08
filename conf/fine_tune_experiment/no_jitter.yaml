@@ -1,0 +1,9 @@
+# @package _global_
+
+training_data:
+  augmentation:
+    jitter: 0
+
+wandb:
+  tags: ["no_jitter"]
+  name: no_jitter

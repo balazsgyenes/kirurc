@@ -1,0 +1,9 @@
+# @package _global_
+
+defaults:
+  - override /loss: prob_merged
+  - _self_
+
+wandb:
+  tags: ["prob_merged"]
+  name: prob_merged

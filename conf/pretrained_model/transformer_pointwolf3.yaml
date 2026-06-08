@@ -1,0 +1,4 @@
+# @package _global_
+# w/o VariableJitter, w/ PointWOLF
+
+model_artifact: pretrained_7jk0kede

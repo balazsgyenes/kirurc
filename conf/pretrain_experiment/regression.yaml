@@ -1,0 +1,28 @@
+# @package _global_
+
+defaults:
+  - override /model: regression_transformer
+  - override /loss: target_chamfer_distance
+
+synthetic_dataset:
+  preprocess:
+    # as a final step of preprocessing, move targets to pos field so that data augmentation applies to them
+    add_target_points:
+      _target_: kirurc_vision.transforms.AddTargetPoints
+      spline_coordinates:
+        t1_spline: [0.35, 0.5, 0.65]
+        t2_spline: [0.35, 0.5, 0.65]
+  augmentation:
+    # after data augmentation, move targets to y field, as only this is available to loss function
+    move_targets_to_y: True
+
+# deactivate existing metrics that don't work with regression output
+train_metrics:
+  miou: null
+eval_metrics:
+  miou: null
+  spline: null
+
+wandb:
+  tags: ["regression"]
+  name: regression

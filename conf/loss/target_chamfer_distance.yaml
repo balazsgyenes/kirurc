@@ -1,0 +1,4 @@
+name: TargetChamferDistance
+args:
+  _target_: kirurc_vision.losses.TargetChamferDistance
+  symmetric: True

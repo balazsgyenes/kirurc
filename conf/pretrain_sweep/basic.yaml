@@ -1,0 +1,10 @@
+# @package _global_
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      pretrain_experiment: "\
+        no_cuts,no_rotations,no_shear_stretch,standard_jitter,no_jitter,no_augmentation,\
+        50percent_data,10percent_data,\
+        "

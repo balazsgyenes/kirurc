@@ -1,0 +1,9 @@
+# @package _global_
+
+training_data:
+  augmentation:
+    vary_jitter: False
+
+wandb:
+  tags: ["standard_jitter"]
+  name: standard_jitter

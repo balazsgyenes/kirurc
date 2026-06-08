@@ -1,0 +1,15 @@
+# @package _global_
+
+synthetic_dataset:
+  n_classes: 3
+  preprocess:
+    squash_labels:
+      _target_: kirurc_vision.transforms.Relabel
+      mapping:
+        3: 0  # gallbladder
+        4: 0  # fat tissue
+        5: 0  # cystic duct
+        6: 0  # cystic artery
+
+wandb:
+  name: no_diverse_labels

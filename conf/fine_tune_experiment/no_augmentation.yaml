@@ -1,0 +1,8 @@
+# @package _global_
+
+training_data:
+  augmentation: null
+
+wandb:
+  tags: ["no_augmentation"]
+  name: no_augmentation

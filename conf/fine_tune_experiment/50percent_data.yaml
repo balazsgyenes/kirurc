@@ -1,0 +1,5 @@
+# @package _global_
+
+wandb:
+  tags: ["50%_dataset"]
+  name: 50%_dataset

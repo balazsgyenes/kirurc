@@ -1,0 +1,11 @@
+# @package _global_
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      fine_tune_experiment: "\
+        tune_head_only,tune_head_only_reinit,tune_1layer,tune_2layer,tune_3layer,tune_entire_network,\
+        no_cuts,no_rotations,no_shear_stretch,standard_jitter,no_jitter,no_augmentation,\
+        50percent_data,10percent_data\
+        "

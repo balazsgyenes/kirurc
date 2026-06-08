@@ -1,0 +1,10 @@
+# @package _global_
+# w/o VariableJitter or RandomPatches
+
+training_data:
+  augmentation:
+    vary_jitter: False
+
+wandb:
+  name: w/o VariableJitter or RandomPatches
+  tags: ["pw_base"]

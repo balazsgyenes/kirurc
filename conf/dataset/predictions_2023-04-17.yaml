@@ -1,0 +1,18 @@
+defaults:
+  - common
+  - /dataset@labeled_dataset: experiments_2023-04-17
+  - /color_mapping@preprocess.color_to_label.color_mapping: rviz
+  - _self_
+
+type: prediction
+path: ${oc.env:PWD}/datasets/kirurc/experiments_2023-04-17
+n_classes: 3
+preprocess:
+  color_to_label:
+    _target_: kirurc_vision.transforms.ColorToLabel
+    out_key: predicted_labels
+    # cleanup_colors: False
+
+debug_transforms: False
+force_reprocess: False
+num_workers: ${num_workers}

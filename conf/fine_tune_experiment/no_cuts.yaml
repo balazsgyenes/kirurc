@@ -1,0 +1,10 @@
+# @package _global_
+
+# cutout is already disabled for fine-tuning, but this ensures it's off
+training_data:
+  augmentation:
+    cutout: null
+
+wandb:
+  tags: ["no_cuts"]
+  name: no_cuts

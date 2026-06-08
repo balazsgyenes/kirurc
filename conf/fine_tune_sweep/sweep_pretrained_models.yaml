@@ -1,0 +1,7 @@
+# @package _global_
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      model_artifact: pretrained_kosjwkc8,pretrained_9b7o94aa,pretrained_ugbjizxy,pretrained_oiemwthd,pretrained_xwe3egc3,pretrained_8ecy1jzz,pretrained_bst9rcpg,pretrained_qgl9qelj,pretrained_kwo5ff0b,pretrained_vp80kyyc,pretrained_zwtxyv4a,pretrained_6q9mdjtb,pretrained_e642361g,pretrained_po18pj6v,pretrained_vqi25sea,pretrained_1hfy68o7,pretrained_fqylc9vo,pretrained_5fo9gpum,pretrained_yzgh3aka,pretrained_eiotlkvz,pretrained_sozbhi05,pretrained_fx22fsfx,pretrained_ym5xu1gp,pretrained_rt9rtz8k,pretrained_6kfefaxv,pretrained_2amqk584,pretrained_1g7ruajp,pretrained_5c8p4wd5,pretrained_mgtaf9rb,pretrained_9s71jjni,pretrained_w88fven1,pretrained_li66g91x,pretrained_yusr6t7z,pretrained_44wwog4f

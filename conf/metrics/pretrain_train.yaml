@@ -1,0 +1,4 @@
+miou:
+  _target_: kirurc_vision.metrics.TargetMIoU
+  num_classes: ${synthetic_dataset.n_classes}
+  target_classes: ${synthetic_dataset.target_classes}

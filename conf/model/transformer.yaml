@@ -1,0 +1,9 @@
+name: PointTransformer
+n_classes: ???
+device: null
+model:
+  _target_: kirurc_vision.models.point_transformer.PointTransformer
+  in_channels: 0  # no color
+  out_channels: ${..n_classes}
+  dim_model: [32, 64, 128, 256]
+  k: 16

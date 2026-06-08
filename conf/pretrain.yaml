@@ -1,0 +1,31 @@
+defaults:
+  - model: transformer
+  - dataset@synthetic_dataset: lap_chole_scene
+  - loss: ce
+  - metrics@train_metrics: pretrain_train
+  - metrics@eval_metrics: pretrain_eval
+  - _self_
+  - pretrain_experiment: null
+  - platform: null
+
+learning_rate: 0.0005
+scheduler:
+  lr_epoch_base: 0.98
+class_weights: null  # weights according to label frequency in dataset
+hold_out_ratio: 0.1
+batch_size: 16
+test_batch_size: 16
+epochs: 30
+log_every_n_updates: 100
+test_every_n_epochs: 1
+save_every_n_epochs: 5
+num_workers: 32
+
+wandb:
+  tags: null
+  notes: null
+  name: standard
+
+# overrides
+model:
+  n_classes: ${synthetic_dataset.n_classes}

@@ -1,0 +1,13 @@
+# @package _global_
+# w/o VariableJitter or RandomPatches, w/ PointWOLF
+
+defaults:
+  - override /dataset/augmentation@training_data.augmentation: real_pointwolf
+
+training_data:
+  augmentation:
+    vary_jitter: False
+
+wandb:
+  name: w/o VariableJitter or RandomPatches, w/ PointWOLF
+  tags: ["pw_base+pw"]

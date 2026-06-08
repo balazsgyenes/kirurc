@@ -1,0 +1,8 @@
+0: [96, 96, 96]  # liver/background
+1: [96, 96, 96]  # target 1
+2: [96, 96, 96]  # target 2
+3: [96, 96, 96]  # gallbladder
+4: [96, 96, 96]  # fat tissue
+5: [96, 96, 96]  # cystic duct
+6: [96, 96, 96]  # cystic artery
+7: [96, 96, 96]  # regression target

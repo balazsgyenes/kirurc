@@ -1,0 +1,7 @@
+# @package _global_
+
+model_artifact: pretrained_bst9rcpg  # original
+
+wandb:
+  tags: ["original_pretrained"]
+  name: original_pretrained

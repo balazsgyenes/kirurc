@@ -1,0 +1,10 @@
+target_classes: [1, 2]
+laplacian_config:
+  # keep positional weight and reduce contraction weight to force slow convergence
+  # if convergence is too quick, the skeleton becomes shorter than the region
+  MAX_LAPLACE_CONTRACTION_WEIGHT: 1
+  MAX_POSITIONAL_WEIGHT: 1024  # default
+  INIT_LAPLACIAN_SCALE: 100  # default
+spline_config:
+  spline_degree: 3
+  smoothing_factor: 5.0e-4

@@ -1,0 +1,4 @@
+# @package _global_
+# w/o RandomPatches, w/ PointWOLF
+
+model_artifact: pretrained_6usbgmds

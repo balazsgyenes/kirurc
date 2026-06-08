@@ -1,0 +1,10 @@
+# @package _global_
+
+trainable_layers:
+  mlp_head: train  # ( freeze | train | reinit )
+  n_final_up_layers: 1
+  final_up_layers: train  # ( freeze | train | reinit )
+
+wandb:
+  tags: ["head+1layer"]
+  name: head+1layer

@@ -1,0 +1,16 @@
+defaults:
+  - open3d_draw: default
+  - color_mapping: paper
+  - _self_
+
+pkl_path: predictions/2023-04-17_13-10-52_raw_prediction.pkl
+
+skip_keys: [t1_spline, t2_spline, t1_pred_spline, t2_pred_spline, t1_pred_skeleton, t2_pred_skeleton]
+colors_key: predicted_labels
+n_spline_points: 400
+
+save_pcd:
+  folder: renderings
+  extension: .ply
+
+show: True

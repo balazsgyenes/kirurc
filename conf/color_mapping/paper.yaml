@@ -1,0 +1,16 @@
+# i: "#RRGGBB"    # NAME              [H, S, V]
+0: "#CD9A8F"    # liver/background  [10, 30, 80]
+1: "#3DCD6D"    # target 1          [140, 70, 80]
+2: "#3DCD6D"    # target 2          [140, 70, 80]
+3: "#E6D48A"    # gallbladder       [48, 40, 90]
+4: "#F6F293"    # fat tissue        [58, 40, 96]
+5: "#DA9341"    # cystic duct       [32, 70, 85]
+6: "#DA9341"    # cystic artery     [32, 70, 85]
+t1_skeleton: "#FF3333"
+t2_skeleton: "#FF3333"
+t1_spline: "#FFCC99"
+t2_spline: "#FFCC99"
+t1_pred_skeleton: "#0F5BF3"  # [220, 94, 94]
+t2_pred_skeleton: "#0F5BF3"  # [220, 94, 94]
+t1_pred_spline: "#0F5BF3"    # [220, 94, 94]
+t2_pred_spline: "#0F5BF3"    # [220, 94, 94]

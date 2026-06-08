@@ -1,0 +1,9 @@
+# @package _global_
+
+defaults:
+  - override /loss: ce
+  - _self_
+
+wandb:
+  tags: ["no_diverse_labels"]
+  name: no_diverse_labels

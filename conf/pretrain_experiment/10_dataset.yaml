@@ -1,0 +1,7 @@
+# @package _global_
+
+synthetic_dataset:
+  take_first_n: 12800
+
+wandb:
+  name: 10%_dataset

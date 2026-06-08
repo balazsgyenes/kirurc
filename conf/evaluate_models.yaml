@@ -1,0 +1,72 @@
+defaults:
+  - dataset@test_data: experiments_2023-04-17
+  - metrics: finetune_eval
+  - open3d_draw: default
+  - color_mapping: debugging
+  - _self_
+
+wandb_entity: gyenes
+wandb_project: fine-tuning
+
+methods:
+  ours: {tags_all: [default], tags_not_in: [hidden, pnpp, stratified]}
+  no_diverse_labels: {tags_all: [no_diverse_labels], tags_not_in: [hidden, pnpp, stratified]}
+  prob_merged: {tags_all: [prob_merged], tags_not_in: [hidden, pnpp, stratified]}
+  no_pretraining: {tags_all: [no_pretraining], tags_not_in: [hidden, pnpp, stratified]}
+  head_only: {tags_all: [head_only], tags_not_in: [hidden, pnpp, stratified]}
+  head_only_reinit: {tags_all: [head_only_reinit], tags_not_in: [hidden, pnpp, stratified]}
+  head+1layer: {tags_all: [head+1layer], tags_not_in: [hidden, pnpp, stratified]}
+  head+2layer: {tags_all: [head+2layer], tags_not_in: [hidden, pnpp, stratified]}
+  entire_network: {tags_all: [entire_network], tags_not_in: [hidden, pnpp, stratified]}
+  no_cuts: {tags_all: [no_cuts], tags_not_in: [hidden, pnpp, stratified]}
+  no_rotations: {tags_all: [no_rotations], tags_not_in: [hidden, pnpp, stratified]}
+  no_shear_stretch: {tags_all: [no_shear_stretch], tags_not_in: [hidden, pnpp, stratified]}
+  standard_jitter: {tags_all: [standard_jitter], tags_not_in: [hidden, pnpp, stratified]}
+  no_jitter: {tags_all: [no_jitter], tags_not_in: [hidden, pnpp, stratified]}
+  no_augmentation: {tags_all: [no_augmentation], tags_not_in: [hidden, pnpp, stratified]}
+  50%_dataset: {tags_all: [50%_dataset], tags_not_in: [hidden, pnpp, stratified]}
+  10%_dataset: {tags_all: [10%_dataset], tags_not_in: [hidden, pnpp, stratified]}
+  pnpp: {tags_all: [default, pnpp], tags_not_in: [hidden]}
+  stratified: {tags_all: [default, stratified], tags_not_in: [hidden]}
+  pw_base: {tags_all: [pw_base], tags_not_in: [hidden, pnpp, stratified]}
+  pw_base+pw: {tags_all: [pw_base+pw], tags_not_in: [hidden, pnpp, stratified]}
+  pw_base+pw+rp: {tags_all: [pw_base+pw+rp], tags_not_in: [hidden, pnpp, stratified]}
+  pw_base+pw+vj: {tags_all: [pw_base+pw+vj], tags_not_in: [hidden, pnpp, stratified]}
+  pw_base+pw+vj+rp: {tags_all: [pw_base+pw+vj+rp], tags_not_in: [hidden, pnpp, stratified]}
+
+hydra:
+  run:
+    dir: results/${now:%Y-%m-%d_%H-%M-%S}
+  output_subdir: hydra
+
+device: null
+batch_size: 8
+num_workers: 32
+
+test_data:
+  augmentation: null  # disable augmentation to see performance on unnoised data
+  # debug_transforms: True  # enable this to bypass preprocessed data
+
+# start at some index (if integer) or some fraction of the way through dataset (if float)
+# start_at: 0.5
+
+# keep predicted splines so they can be saved/rendered
+metrics:
+  spline:
+    cleanup_skeletons: True
+    cleanup_splines: True
+
+save_csv:
+  folder: ${hydra:runtime.output_dir}
+
+# save_pkl:
+#   folder: predictions
+
+# to_pcd:
+#   skip_keys: [t1_skeleton, t2_skeleton, t1_pred_skeleton, t2_pred_skeleton]  # do not render skeletons
+#   colors_key: predicted_labels
+#   n_spline_points: 100
+
+# #   save_pcd:
+# #     folder: renderings
+# #     extension: .ply

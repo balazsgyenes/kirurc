@@ -1,0 +1,22 @@
+unnormalize:
+  _target_: kirurc_vision.metrics.Unnormalize
+miou:
+  _target_: kirurc_vision.metrics.SquashedMIoU
+  num_classes: ${test_data.n_classes}
+  target_classes: ${test_data.target_classes}
+  lowest_class_to_squash: 3
+spline:
+  _target_: kirurc_vision.metrics.SplineChamferDistance
+  target_classes: ${test_data.target_classes}
+  laplacian_config: ${test_data.laplacian_config}
+  spline_config:
+    spline_degree: ${test_data.spline_config.spline_degree}
+      # decrease smoothing to compensate for over-segmentation of targets
+    smoothing_factor: 2.0e-5
+  symmetric: False
+  trim_reference_ends: 0.1
+  trim_predicted_ends: False
+  # clip_sections: [[20, 40], [40, 60], [60, 80]]
+  chamfer_distance_threshold: 0.00075  # 0.75mm
+  n_points_ref: 200
+  n_points_pred: 200

@@ -1,0 +1,7 @@
+name: StratifiedTransformer
+n_classes: ???
+device: null
+model:
+  _target_: kirurc_vision.models.stratified_transformer_v1m2_refine.StratifiedTransformer
+  in_channels: 0  # no color
+  num_classes: ${..n_classes}

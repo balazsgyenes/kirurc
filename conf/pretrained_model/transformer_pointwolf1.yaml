@@ -1,0 +1,4 @@
+# @package _global_
+# w/o VariableJitter or RandomPatches
+
+model_artifact: pretrained_3p1u3e77

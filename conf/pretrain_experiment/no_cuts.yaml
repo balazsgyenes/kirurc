@@ -1,0 +1,8 @@
+# @package _global_
+
+synthetic_dataset:
+  augmentation:
+    cutout: null
+
+wandb:
+  name: no_cuts

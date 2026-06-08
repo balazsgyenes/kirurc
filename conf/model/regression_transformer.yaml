@@ -1,0 +1,8 @@
+name: PointTransformerRegression
+device: null
+model:
+  _target_: kirurc_vision.models.point_transformer_classification.RegressionPointTransformer
+  in_channels: 0  # no color
+  out_targets: 6  # 6 targets hard-coded
+  dim_model: [32, 64, 128, 256]
+  k: 16

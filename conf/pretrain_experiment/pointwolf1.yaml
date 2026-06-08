@@ -1,0 +1,10 @@
+# @package _global_
+# w/o VariableJitter or RandomPatches
+
+synthetic_dataset:
+  augmentation:
+    cutout: null
+    vary_jitter: False
+
+wandb:
+  name: w/o VariableJitter or RandomPatches

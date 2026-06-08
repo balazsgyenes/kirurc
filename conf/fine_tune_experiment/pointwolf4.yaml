@@ -1,0 +1,9 @@
+# @package _global_
+# w/o RandomPatches, w/ PointWOLF
+
+defaults:
+  - override /dataset/augmentation@training_data.augmentation: real_pointwolf
+
+wandb:
+  name: w/o RandomPatches, w/ PointWOLF
+  tags: ["pw_base+pw+vj"]
